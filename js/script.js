@@ -21,3 +21,14 @@ li.on('dblclick', crossOut);
 
 // jQuery
 //3(i). Adding the delete button "X": 
+let crossOutButton = $(<crossOutButton></crossOutButton>);
+crossOutButton.append(document.createTextNode('X'));
+li.append(crossOutButton);
+
+function deleteListItem(){
+    li.addClass('delete')
+}
+
+crossOutButton.on('click', deleteListItem);
+
+$('#list').sortable();
